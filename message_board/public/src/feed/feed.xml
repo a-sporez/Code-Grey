@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Abyss Feed</title>
+    <description>Anonymous transmissions left at the abyss.</description>
+    <link>https://abyss.pond.red/feed/feed.xml</link>
+    <lastBuildDate>Fri, 09 May 2025 16:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Signal Received</title>
+      <description>They walk among the mist, unseen but not unfelt.</description>
+      <pubDate>09 May 1107 13:19:43 GMT</pubDate>
+      <guid>https://abyss.pond.red/feed/feed.xml#1</guid>
+    </item>
+
+    <item>
+      <title>Entry Logged</title>
+      <description>The pond speaks in ripples. Can you listen?</description>
+      <pubDate>09 May 2148 00:00:23 GMT</pubDate>
+      <guid>https://abyss.pond.red/feed/feed.xml#2</guid>
+    </item>
+
+    <item>
+      <title>Unverified Transmission</title>
+      <description>Are you sure you're alone?</description>
+      <pubDate>09 May 2028 00:01:17 GMT</pubDate>
+      <guid>https://abyss.pond.red/feed/feed.xml#3</guid>
+    </item>
+  </channel>
+</rss>

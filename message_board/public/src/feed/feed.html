@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abyss Feed Viewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <h1>🔊 Anonymous Transmissions</h1>
+  <div id="feed"></div>
+
+  <script>
+    async function loadFeed() {
+      const res = await fetch('feed.xml');
+      const text = await res.text();
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(text, "application/xml");
+      const items = xml.querySelectorAll("item");
+      const container = document.getElementById("feed");
+
+      items.forEach(item => {
+        const title = item.querySelector("title")?.textContent;
+        const description = item.querySelector("description")?.textContent;
+        const pubDate = item.querySelector("pubDate")?.textContent;
+
+        const entry = document.createElement("div");
+        entry.className = "entry";
+        const titleDiv = document.createElement("div");
+        titleDiv.innerHTML = `<strong>${title}</strong>`;
+
+        const descDiv = document.createElement("div");
+        descDiv.className = "description";
+        descDiv.innerHTML = description.replace(/\n/g, "<br>");
+
+        const timeDiv = document.createElement("div");
+        timeDiv.className = "timestamp";
+        timeDiv.textContent = pubDate;
+
+        entry.appendChild(titleDiv);
+        entry.appendChild(descDiv);
+        entry.appendChild(timeDiv);
+        container.appendChild(entry);
+      });
+    }
+
+    loadFeed();
+  </script>
+  <footer style="margin-top: 50px; text-align: center;">
+  <p>
+    <a href="/src/feed/form.html" class="footer-link">✉️ Leave a Transmission</a>
+  </p>
+  </footer>
+</body>
+</html>
