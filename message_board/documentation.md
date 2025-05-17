@@ -183,15 +183,3 @@ $rss->save($rssFile);
 | `$descText`     | Final CDATA XML-safe description |
 
 ---
-
-### 🧼 Protection Summary
-
-* 🔒 Normalizes weird Windows `^M`
-* 🔒 Strips control chars like `\x00`, `\x1F`
-* 🔒 Detects & redacts base64-looking blobs
-* ✅ Logs everything in full to `messages.txt`
-* ✅ Keeps visual display safe using CDATA + `<br>`
-
----
-
-Would you like a printable or Bear Blog–style version of this sheet too? I can help you port it into your site's `/docs` section if you want to turn this into in-universe dev lore (“Swamp Control Protocols”) 🌿
